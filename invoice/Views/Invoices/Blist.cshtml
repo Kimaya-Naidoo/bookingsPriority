@@ -1,0 +1,132 @@
+﻿@model IEnumerable<invoice.Models.Booking>
+
+@{
+    ViewBag.Title = "Blist";
+}
+
+<h2>Blist</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Client Name: @Html.TextBox("search") <br />
+        <input type="submit" value="Search" />
+    </p>
+}
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pickupdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dropofdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dropCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.clientname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cellnum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.specInstruct)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.testtext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.two)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distance)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.final)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Collection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dropoff)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pickupdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dropofdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dropCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.clientname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cellnum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.specInstruct)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.testtext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.two)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distance)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.final)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Collection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dropoff)
+        </td>
+        <td>
+            @Html.ActionLink("Index", "Index", "Invoices", new { id = item.BookingIds }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookingIds }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookingIds }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookingIds })
+        </td>
+    </tr>
+}
+
+</table>
